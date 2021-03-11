@@ -1,54 +1,123 @@
 {% extends "index.html"%}
 {% block body%}
-<div class="container apps">
-    <div class="row">
-        <div class="col-xs-12 col-md-6 col-md-offset-3 panel panel-default">
-            <legend>Add Applicaion</legend>
-            {% call macros.render_form(form, action_url=url_for('app.add_app'), action_text="Add Application",
-            class_="form-horizontal") %}
-            <div class="col-md-6">
-                {{ macros.input(form.company_name, type='text') }}
-            </div>
-            <div class="col-md-6">
-                {{ macros.input(form.date_apply, type='date') }}
-            </div>
-            <div class="col-md-6">
-                {{ macros.input(form.position, type='select') }}
-            </div>
-            <div class="col-md-6">
-                {{ macros.job_type_select(form.job_type, value='', class='form-control', id='') }}
-            </div>
-            <div class="col-md-6">
-                {{ macros.input(form.location, type='text') }}
-            </div>
-            <div class="col-md-6">
-                {{ macros.input(form.industry, type='text') }}
-            </div>
-            <div class="col-md-6">
-                {{ macros.input(form.next_step, type='text') }}
-            </div>
-            <div class="col-md-6">
-                {{ macros.input(form.contact, type='text') }}
-            </div>
-            <div class="col-md-12">
-                {{ macros.input(form.job_board, type='text') }}
-            </div>
 
-            <div class="col-md-12">
-                {{ macros.render_textarea(form.notes)}}
-            </div>
-            <div class="col-md-12 text-center">
-                {% endcall %}
-            </div>
-
-        </div>
+<form action="/action_page.html" onsubmit="myFunction()">
+<div class="row">
+    <div class="col-md-6">
+    <label for="inputFirstName" class="form-control">First Name</label>
+    
+        
+        <input type="text" class="form-control" placeholder="First name" aria-label="First name">
     </div>
 
 
-
-
-</div>{% else %}
-<h1>You have successful submitted application,someone will get back to you!!!!!</h1> {% endif %}
+    <div class="col-md-6">
+    <label for="inputLastName" class="form-control">Last Name</label>
+        
+        <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+    </div>
 </div>
+
+<div class="row">
+    <div class="col-md-6">
+     
+            <div class="input-group">
+                <div class="input-group-text">Email @ </div>
+                <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="e-mail">
+            </div>
+       
+
+    <div class="row">
+    <div class="col-md-4">
+        <label for="inputTelephone4" class="form-control">Telephone</label>
+        <input type="number" class="form-control">
+    </div>
+   
+    <div class="col-6">
+        <label for="inputAddress" class="form-control">Address</label>
+        <input type="text" class="form-control"placeholder="1234 Main St">
+    </div>
+    </div>
+    </div>
+    
+    <div class="col-6">
+        <label for="inputAddress2" class="form-control">P.O.Box:</label>
+        <input type="number" class="form-control" placeholder="po.box">
+    </div>
+    <div class="col-md-6">
+        <label for="inputCity" class="form-control">City</label>
+        <input type="text" class="form-control" >
+        </div>
+
+<div class="col-md-6">
+    <label for="inputZip" class="form-control">Zip</label>
+    <input type="number" class="form-control" >
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <label for="inputState" class="form-control">Job Categories:</label>
+        <select id="inputState" class="form-control">
+            <option selected>Job Types...</option>
+            <option>Agriculture, Food and Natural Resources.</option>
+            <option> Architecture and Construction.</option>
+            <option>Arts, Audio/Video Technology and Communications. ...</option>
+            <option>Education and Training. ...</option>
+            <option>Government and Public Administration. ...</option>
+            <option>Hospitality and Tourism. ...</option>
+            <option>Information Technology. ...</option>
+            <option>Manufacturing. ...</option>
+            <option>Science, Technology, Engineering and Mathematics.</option>
+        </select>
+    </div>     
+
+
+<div class="col-6"><br>
+    Select.
+        <select class="form-control">
+            
+            <option selected>Choose...</option>
+            <option value="1">Agree</option>
+            <option value="2">Disagree</option>
+            <option value="3">Silent</option>
+        </select>
+    </div>
+    </div>
+
+    <div class="col-6">
+        <div class="form-control">
+            <h1>Agree to terms and Conditions!</h1>
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label" for="gridCheck">
+    
+            </label>
+        </div>
+    </div>
+    
+    </form>
+    
+
+<div class="form-floating">
+    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+    <label for="floatingTextarea">Comments</label>
+</div>
+   
+    <div class="col-auto">
+        <input type="reset" value="Reset" />
+        <input type="submit" value="Submit">
+        
+ 
+    </div>
+</form>
+    
+</form>
+
+<script>
+    function myFunction() {
+        alert("The form was successfully submitted");
+    }
+</script>
+</form>
+
 
 {% endblock%}
