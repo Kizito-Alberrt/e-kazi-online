@@ -24,7 +24,10 @@ db = SQLAlchemy(app)
 
 
 
+ forms
+=======
 posts = Blueprint('jobs', __name__, template_folder ='templates')
+ master
 @app.route('/')
 def home():
     return render_template('home.html')
