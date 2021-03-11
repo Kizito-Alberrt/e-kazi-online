@@ -24,9 +24,12 @@ db = SQLAlchemy(app)
 
 
 
+profile
+=======
  forms
 =======
 posts = Blueprint('jobs', __name__, template_folder ='templates')
+ master
  master
 @app.route('/')
 def home():
