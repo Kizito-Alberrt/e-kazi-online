@@ -67,6 +67,11 @@ def login():
     return render_template('login.html')
 
 
+@app.route('/administrative')
+def administrative():
+    return render_template('administrative.html')
+
+
 
 
 
