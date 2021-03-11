@@ -1,14 +1,51 @@
 {% extends "index.html"%}
 {% block body%}
 
-<h1>Job listing</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>job listing</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Job listing</h1>
 
 <div class="container">
  <h4>welcome to e-kazi where your dream career can be achieved</h4>
 
  <p>Available jobs</p>
 
+ <form class="d-flex" 
+            method="GET">
+              <input class="form-control me-2" type="search" placeholder="Search for available jobs" name="q">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
+
 
 </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $(".d-flex").on("input",function(e){
+               textinlivebox = $(".d-flex").val();
+               $.ajax({
+                   method:"post",
+                   url:"/livesearch",
+                   data:{text:textinlivebox},
+                   success:function(res){
+                       console.log(res);
+                   }
+               })
+               
+        });
+    })
+</script>
+</html>
+
     
 {% endblock%}
