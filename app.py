@@ -1,3 +1,4 @@
+ login
 from logging import debug
 from flask import Flask,render_template,url_for, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
@@ -27,7 +28,20 @@ users.append(users(id=1, username='Derrick', password='password'))
 def home():
     return render_template('login.html' 'register.html')
     
+=======
+# from logging import debug
+# from flask import Flask,render_template
+
+# app = Flask(__name__)
+
+# @app.route('/')
+# def home():
+#     return render_template('home.html')
+ master
 
 
-if __name__ =='__main__':
-    app.run(debug=True)
+
+
+
+# if __name__ =='__main__':
+#     app.run(debug=True)
